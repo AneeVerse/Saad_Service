@@ -1,42 +1,101 @@
-"use client"
+"use client";
 // components/Hero.js
 import { FaPlay } from "react-icons/fa";
 import { motion } from "framer-motion";
+import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
+import { useState } from "react";
+import Button from "../common/Button";
+import Typography from "../common/Typography";
+
+// Array of text content
+const textArray = [
+  {
+    heading: `Leading Solution for Attestation`,
+    pra: `We empower professionals to build customized solutions quickly
+            without the need for code.`,
+  },
+  {
+    heading: `Leading Solution for Attestation 2`,
+    pra: `Empower your business with fast and reliable attestation services,
+            ensuring seamless global operations.`,
+  },
+  {
+    heading: `Leading Solution for Attestation 3`,
+    pra: `Discover professional solutions for all your documentation needs,
+            trusted by thousands worldwide.`,
+  },
+];
 
 export default function Hero() {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  // Handle next text change
+  const handleNext = () =>
+    setCurrentIndex((prevIndex) =>
+      prevIndex === textArray.length - 1 ? 0 : prevIndex + 1
+    );
+
+  // Handle previous text change
+  const handlePrev = () =>
+    setCurrentIndex((prevIndex) =>
+      prevIndex === 0 ? textArray.length - 1 : prevIndex - 1
+    );
+
   return (
     <motion.section
-      className="bg-gradient-to-r from-green-50 to-white py-16 px-6 md:px-12"
+      className="relative bg-gradient-to-r from-green-50 to-white py-16 px-6 md:px-12 overflow-hidden"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      <div className="grid md:grid-cols-2 gap-12 items-center">
+      {/* SVG Background Decorations */}
+      <motion.div
+        className="absolute -top-20 -left-16 w-72 h-72 bg-green-200 rounded-full opacity-30"
+        animate={{ y: [0, 20, 0] }}
+        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute top-10 right-0 w-96 h-96 bg-green-50 rounded-full opacity-40"
+        animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }}
+        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
+      />
+    
+      {/* Content Section */}
+      <div className="grid md:grid-cols-2 max-w-[1280px] mx-auto gap-12 items-center relative z-10">
         {/* Text Content */}
-        <div className="space-y-8">
-          <h1 className="text-5xl font-extrabold text-gray-800 leading-tight">
-            Leading Solution for Attestation
-          </h1>
-          <p className="text-lg text-gray-600">
-            We empower professionals to build customized solutions quickly
-            without the need for code.
-          </p>
-          <div className="flex items-center space-x-4">
-            <motion.button
-              className="bg-green-600 text-white py-3 px-8 rounded-full shadow-md hover:bg-green-700 transition duration-300"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Get Started
-            </motion.button>
-            <motion.button
-              className="flex items-center space-x-2 text-green-600 hover:underline"
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <FaPlay className="text-lg" />
-              <span>Watch Video</span>
-            </motion.button>
+        <div className="space-y-6">
+          <motion.h1
+            className="text-5xl font-extrabold text-gray-800 leading-tight"
+            key={currentIndex}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {textArray[currentIndex].heading}
+          </motion.h1>
+         
+          <motion.p
+            className="text-lg text-gray-600"
+            key={`${currentIndex}-para`}
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            {textArray[currentIndex].pra}
+          </motion.p>
+          <div className="flex items-center gap-4">
+              <Button text="Get Started" type="primary" onClick={()=>alert("hello")}/>
+            {/* Arrows for Text Navigation */}
+            <div className="flex gap-3">
+              <FaAngleLeft
+                className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+                onClick={handlePrev}
+              />
+              <FaAngleRight
+                className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+                onClick={handleNext}
+              />
+            </div>
           </div>
         </div>
 

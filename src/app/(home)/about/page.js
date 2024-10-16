@@ -139,7 +139,7 @@ function FeatureCard({ icon: Icon, title, description }) {
 function Testimonial({ name, feedback }) {
   return (
     <div className="bg-gray-50 p-6 md:p-8 rounded-xl shadow-sm">
-      <p className="text-lg text-gray-700 mb-2 md:mb-4">"{feedback}"</p>
+      <p className="text-lg text-gray-700 mb-2 md:mb-4">&quot;{feedback}&quot;</p>
       <p className="text-right text-sm font-semibold text-gray-500">- {name}</p>
     </div>
   );

@@ -11,7 +11,7 @@ export default function Home() {
   return (
     <div>
       <Navbar/>
-      <div className={"mt-[60px]"}>
+      <div className={"mt-[90px]"}>
         
       <Hero/>
       <Expertise/>

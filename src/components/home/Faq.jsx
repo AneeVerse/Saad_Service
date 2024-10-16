@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import Typography from "../common/Typography";
 
 export default function FAQ() {
   const [openIndex, setOpenIndex] = useState(null); // Track which FAQ is open
@@ -39,10 +40,8 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12 bg-gray-50">
-      <h2 className="text-3xl font-bold mb-12 text-center">
-        Frequently Asked Questions
-      </h2>
+    <section className="py-16 px-6 md:px-12 bg-gray-50">      
+      <Typography as="h2" variant="h2" className="text-center mb-8">Frequently Asked Questions</Typography>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
           <div

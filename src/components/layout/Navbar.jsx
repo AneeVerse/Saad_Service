@@ -10,34 +10,55 @@ const sidebarVariants = {
   visible: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
 };
 
+// Navigation links array
+const navLinks = [
+  { name: "About", path: "/about" },
+  { name: "Services", path: "#services", dropdown: true, subLinks: [
+    { name: "Notary Services", path: "/services/notary" },
+    { name: "MEA Services", path: "/services/mea" },
+    { name: "Embassy Services", path: "/services/embassy" },
+  ]},
+  { name: "Testimonials", path: "#testimonials" },
+  { name: "Contact", path: "/contact" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <header className="bg-white shadow-lg fixed w-full z-50 top-0 left-0">
+    <header className=" fixed w-full border-b-[1px] border-gray-200 bg-white left-0 z-40 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4">
+        <div className="flex  h-[90px] justify-between items-center">
           {/* Logo */}
           <Link href="/" className="text-3xl font-bold text-green-700 hover:text-green-800">
             Faad Service
           </Link>
 
           {/* Menu for larger screens */}
-          <nav className="hidden md:flex space-x-8">
-            <Link href="/about" className="text-lg text-gray-700 hover:text-green-700 transition">
-              About
-            </Link>
-            <Link href="#services" className="text-lg text-gray-700 hover:text-green-700 transition">
-              Services
-            </Link>
-            <Link href="#testimonials" className="text-lg text-gray-700 hover:text-green-700 transition">
-              Testimonials
-            </Link>
-            <Link href="/contact" className="text-lg text-gray-700 hover:text-green-700 transition">
-              Contact
-            </Link>
+          <nav className="hidden md:flex space-x-8 items-center">
+            {navLinks.map((link, index) => (
+              <div key={index} className="relative group">
+                <Link href={link.path} className="text-lg text-gray-700 hover:text-green-700 transition">
+                  {link.name}
+                </Link>
+                {/* Dropdown for Services */}
+                {link.dropdown && (
+                  <div className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg py-4 space-y-2 w-40">
+                    {link.subLinks.map((subLink, subIndex) => (
+                      <Link
+                        key={subIndex}
+                        href={subLink.path}
+                        className="px-4 py-2 hover:bg-gray-100 text-gray-700 transition"
+                      >
+                        {subLink.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))}
           </nav>
 
           {/* Hamburger Menu for Mobile */}
@@ -58,18 +79,28 @@ export default function Navbar() {
           <FaTimes />
         </button>
         <nav className="flex flex-col space-y-6">
-          <Link href="/about" onClick={toggleSidebar} className="text-2xl hover:text-gray-300 transition">
-            About
-          </Link>
-          <Link href="#services" onClick={toggleSidebar} className="text-2xl hover:text-gray-300 transition">
-            Services
-          </Link>
-          <Link href="#testimonials" onClick={toggleSidebar} className="text-2xl hover:text-gray-300 transition">
-            Testimonials
-          </Link>
-          <Link href="/contact" onClick={toggleSidebar} className="text-2xl hover:text-gray-300 transition">
-            Contact
-          </Link>
+          {navLinks.map((link, index) => (
+            <div key={index}>
+              <Link href={link.path} onClick={toggleSidebar} className="text-2xl hover:text-gray-300 transition">
+                {link.name}
+              </Link>
+              {/* Sub-links for Services */}
+              {link.dropdown && (
+                <div className="ml-4 mt-2 flex flex-col space-y-2">
+                  {link.subLinks.map((subLink, subIndex) => (
+                    <Link
+                      key={subIndex}
+                      href={subLink.path}
+                      onClick={toggleSidebar}
+                      className="hover:text-gray-300 transition"
+                    >
+                      {subLink.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </nav>
       </motion.div>
 
