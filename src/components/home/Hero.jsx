@@ -43,19 +43,19 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative bg-gradient-to-r from-green-50 to-white py-16 px-6 md:px-12 overflow-hidden"
+      className="relative bg-gradient-to-r from-[#f5e0b8] to-white py-16 px-6 md:px-12 overflow-hidden"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
       {/* SVG Background Decorations */}
       <motion.div
-        className="absolute -top-20 -left-16 w-72 h-72 bg-green-200 rounded-full opacity-30"
+        className="absolute -top-20 -left-16 w-72 h-72 bg-[#D4AF37] rounded-full opacity-30"
         animate={{ y: [0, 20, 0] }}
         transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
       />
       <motion.div
-        className="absolute top-10 right-0 w-96 h-96 bg-green-50 rounded-full opacity-40"
+        className="absolute top-10 right-0 w-96 h-96 bg-[#f9e8c2] rounded-full opacity-40"
         animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }}
         transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
       />
@@ -84,15 +84,15 @@ export default function Hero() {
             {textArray[currentIndex].pra}
           </motion.p>
           <div className="flex items-center gap-4">
-              <Button text="Get Started" type="primary" onClick={()=>alert("hello")}/>
+            <Button text="Get Started" type="secondary" onClick={() => alert("hello")} />
             {/* Arrows for Text Navigation */}
             <div className="flex gap-3">
               <FaAngleLeft
-                className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+                className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
                 onClick={handlePrev}
               />
               <FaAngleRight
-                className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+                className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
                 onClick={handleNext}
               />
             </div>

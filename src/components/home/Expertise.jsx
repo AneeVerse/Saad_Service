@@ -1,4 +1,4 @@
-"use client"
+"use client";
 // components/Expertise.js
 
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
@@ -9,62 +9,37 @@ const expertiseItems = [
   {
     title: "Notary Services",
     description: "Professional notary services for all your documents.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
     title: "MEA Services",
     description: "Official attestations by MEA for seamless authentication.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
     title: "Embassy Services",
     description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
     title: "Embassy Services",
     description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
     title: "Embassy Services",
     description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
     title: "Embassy Services",
     description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   {
-    title: "Embassy Services",
+    title: "Embassy",
     description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
-  },
-  {
-    title: "Embassy Services",
-    description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
-  },
-  {
-    title: "Embassy Services",
-    description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
-  },
-  {
-    title: "Embassy Services",
-    description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
-  },
-  {
-    title: "Embassy Services",
-    description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
-  },
-  {
-    title: "Embassy Services",
-    description: "Embassy-certified documents for international use.",
-    image: "/images/about/about.webp", // Replace with your own image path
+    image: "/images/home/pen-doc.webp", // Replace with your own image path
   },
   // Add more items as needed
 ];
@@ -79,7 +54,7 @@ export default function Expertise() {
     if (screenWidth >= 1800) setCardsToShow(5);
     else if (screenWidth >= 1200) setCardsToShow(4);
     else if (screenWidth >= 992) setCardsToShow(3);
-    else if (screenWidth >= 768) setCardsToShow(2);
+    else if (screenWidth >= 668) setCardsToShow(2);
     else setCardsToShow(1);
   };
 
@@ -100,8 +75,8 @@ export default function Expertise() {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12 bg-gray-50">
-      <Typography as="h2" variant="h2" className="text-center mb-8">
+    <section className="py-16 px-6 md:px-12 bg-[#fff]"> {/* Updated background color */}
+      <Typography as="h2" variant="h2" className="text-center mb-8 text-gray-800">
         Our Expertise
       </Typography>
       <div className="relative overflow-hidden">
@@ -115,7 +90,7 @@ export default function Expertise() {
           {expertiseItems.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg my-3 mx-[10px] w-full shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300"
+              className="bg-white rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
               style={{
                 flex: `0 0 calc((100% - ${cardsToShow * 20}px) / ${cardsToShow})`, // Adjust the card width based on the number of visible cards and gap
               }}
@@ -128,10 +103,10 @@ export default function Expertise() {
               />
               {/* Text Content */}
               <div className="p-6">
-                <Typography as="h3" variant="h4">
+                <Typography as="h3" variant="h4" className="text-gray-800">
                   {item.title}
                 </Typography>
-                <Typography as="p" variant="paragraph" className="mt-2">
+                <Typography as="p" variant="paragraph" className="mt-2 text-gray-600">
                   {item.description}
                 </Typography>
               </div>
@@ -141,11 +116,11 @@ export default function Expertise() {
       </div>
       <div className="flex justify-center gap-3 mt-6">
         <FaAngleLeft
-          className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+          className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
           onClick={handleLeft}
         />
         <FaAngleRight
-          className="text-green-600 cursor-pointer border border-green-600 hover:bg-green-600 hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+          className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
           onClick={handleRight}
         />
       </div>

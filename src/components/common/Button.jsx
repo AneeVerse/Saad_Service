@@ -7,11 +7,11 @@ import Link from "next/link"; // For Next.js routing (if needed)
 const Button = ({ type = "primary", text, onClick, disabled = false, link }) => {
   // Button styles based on the type
   const buttonClass = classNames(
-    "py-3 px-6 rounded-full font-semibold transition-all duration-300 focus:outline-none shadow-md",
+    "py-[10px] px-6 rounded-full font-semibold transition-all duration-300 focus:outline-none shadow-sm",
     {
-      "bg-green-600 text-white hover:bg-green-700": type === "primary",
-      "bg-white text-green-600 border border-green-600 hover:bg-green-600 hover:text-white":
-        type === "secondary",
+      "bg-[#D4AF37] text-white hover:bg-[#b89730]": type === "primary", // Gold color for primary buttons
+      "bg-white text-[#D4AF37] border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white":
+        type === "secondary", // Gold color for secondary buttons with outline
       "opacity-50 cursor-not-allowed": disabled,
     }
   );
@@ -20,8 +20,7 @@ const Button = ({ type = "primary", text, onClick, disabled = false, link }) => 
   if (link) {
     return (
       <Link href={link} className={buttonClass} role="button">
-          {text}
-        
+        {text}
       </Link>
     );
   }

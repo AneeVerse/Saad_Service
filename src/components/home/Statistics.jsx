@@ -41,8 +41,8 @@ export default function Statistics() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5 }}
         >
-          <h3 className="text-5xl font-bold text-green-600">{clientCount}+</h3>
-          <p className="text-gray-600">Satisfied Clients</p>
+          <h3 className="text-5xl font-bold text-[#D4AF37]">{clientCount}+</h3> {/* Gold color */}
+          <p className="text-gray-800">Satisfied Clients</p> {/* Darker text for contrast */}
         </motion.div>
 
         <motion.div
@@ -50,8 +50,8 @@ export default function Statistics() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.2 }}
         >
-          <h3 className="text-5xl font-bold text-green-600">{documentCount}+</h3>
-          <p className="text-gray-600">Documents Processed</p>
+          <h3 className="text-5xl font-bold text-[#D4AF37]">{documentCount}+</h3> {/* Gold color */}
+          <p className="text-gray-800">Documents Processed</p>
         </motion.div>
 
         <motion.div
@@ -59,8 +59,8 @@ export default function Statistics() {
           animate={inView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.5, delay: 0.4 }}
         >
-          <h3 className="text-5xl font-bold text-green-600">{turnaround} hrs</h3>
-          <p className="text-gray-600">Fast Turnaround</p>
+          <h3 className="text-5xl font-bold text-[#D4AF37]">{turnaround} hrs</h3> {/* Gold color */}
+          <p className="text-gray-800">Fast Turnaround</p>
         </motion.div>
       </div>
     </section>

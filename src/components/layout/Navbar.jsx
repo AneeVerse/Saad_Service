@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { FaBars, FaTimes } from "react-icons/fa";
 import Link from "next/link";
+import Image from "next/image";
 
 // Sidebar animation variants for smooth transitions
 const sidebarVariants = {
@@ -28,19 +29,28 @@ export default function Navbar() {
   const toggleSidebar = () => setIsOpen(!isOpen);
 
   return (
-    <header className=" fixed w-full border-b-[1px] border-gray-200 bg-white left-0 z-40 top-0">
+    <header className="fixed w-full border-b-[1px] border-gray-200 bg-white left-0 z-40 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex  h-[90px] justify-between items-center">
+        <div className="flex h-[90px] justify-between items-center">
           {/* Logo */}
-          <Link href="/" className="text-3xl font-bold text-green-700 hover:text-green-800">
-            Faad Service
+          <Link href="/" className="text-3xl flex gap-2 items-center font-bold text-[#d7b368]">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+              <Image
+                src="/images/logo-saad.png"
+                alt="Saad Service Logo"
+                layout="fill"
+                objectFit="contain" // Ensures the image scales well without distortion
+                priority={true} // Improves performance by loading the logo quickly
+              />
+            </div>
+            <span className="text-lg sm:text-xl md:text-2xl">{"Saad Service".toUpperCase()}</span>
           </Link>
 
           {/* Menu for larger screens */}
           <nav className="hidden md:flex space-x-8 items-center">
             {navLinks.map((link, index) => (
               <div key={index} className="relative group">
-                <Link href={link.path} className="text-lg text-gray-700 hover:text-green-700 transition">
+                <Link href={link.path} className="text-lg text-gray-700 hover:text-[#D4AF37] transition">
                   {link.name}
                 </Link>
                 {/* Dropdown for Services */}
@@ -62,7 +72,7 @@ export default function Navbar() {
           </nav>
 
           {/* Hamburger Menu for Mobile */}
-          <button className="md:hidden text-3xl text-green-700" onClick={toggleSidebar}>
+          <button className="md:hidden text-3xl text-[#D4AF37]" onClick={toggleSidebar}>
             <FaBars />
           </button>
         </div>
@@ -70,7 +80,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className="fixed inset-0 max-w-[280px] bg-green-700 text-white z-40 p-8"
+        className="fixed inset-0 max-w-[280px] bg-[#D4AF37] text-white z-40 p-8"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={sidebarVariants}

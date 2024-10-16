@@ -42,24 +42,48 @@ export default function Contact() {
 
   return (
     <motion.section
-      className="py-16 px-6 md:px-12 bg-white"
+      className="py-12 px-4 md:px-12 bg-[#f5f5f5]" // Reduced padding on mobile
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="grid md:grid-cols-2 gap-12">
-        {/* Contact Info Section */}
-        <div className="space-y-6">
-          <h2 className="text-3xl font-bold">Let’s discuss your needs</h2>
-          <p className="text-gray-600">
-            Feel free to contact us for any inquiries or assistance.
-          </p>
-          <p className="text-lg">📧 support@faadservice.com</p>
-          <p className="text-lg">📞 +1 234 567 890</p>
-        </div>
+      <div className="grid md:grid-cols-2 shadow-lg">
+        {/* Contact Info Section with background image and color overlay */}
+        <motion.div
+          className="relative p-6 md:p-8 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
+          {/* Background Image */}
+          <div className="absolute inset-0 bg-cover bg-center rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+            style={{
+              backgroundImage: `url('/images/home/pen-doc.webp')`, // Replace with actual image path
+            }}
+          >
+          </div>
+          {/* Color Overlay */}
+          <div className="absolute inset-0 bg-black opacity-60 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"></div>
+
+          {/* Text Content */}
+          <div className="relative text-white space-y-6">
+            <h2 className="text-2xl md:text-3xl font-bold">Let’s Discuss Your Needs</h2>
+            <p className="text-gray-300">
+              Feel free to contact us for any inquiries or assistance. Our team is ready to help.
+            </p>
+            <p className="text-lg">📧 support@saadservice.com</p>
+            <p className="text-lg">📞 +1 234 567 890</p>
+          </div>
+        </motion.div>
 
         {/* Contact Form Section */}
-        <form className="space-y-6" onSubmit={handleSubmit}>
+        <motion.form
+          className="space-y-4 md:space-y-6 bg-white p-6 md:p-8 rounded-b-lg md:rounded-r-lg md:rounded-bl-none"
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7 }}
+        >
           <div>
             <input
               type="text"
@@ -67,9 +91,9 @@ export default function Contact() {
               value={formData.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className={`w-full p-3 rounded-lg border ${
+              className={`w-full p-4 rounded-lg border ${
                 errors.name ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-green-400`}
+              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`} // Gold focus ring
             />
             {errors.name && (
               <p className="text-red-500 text-sm mt-1">{errors.name}</p>
@@ -83,9 +107,9 @@ export default function Contact() {
               value={formData.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className={`w-full p-3 rounded-lg border ${
+              className={`w-full p-4 rounded-lg border ${
                 errors.email ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-green-400`}
+              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`} // Gold focus ring
             />
             {errors.email && (
               <p className="text-red-500 text-sm mt-1">{errors.email}</p>
@@ -99,9 +123,9 @@ export default function Contact() {
               onChange={handleChange}
               rows="4"
               placeholder="Your Message"
-              className={`w-full p-3 rounded-lg border ${
+              className={`w-full p-4 rounded-lg border ${
                 errors.message ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-green-400`}
+              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`} // Gold focus ring
             ></textarea>
             {errors.message && (
               <p className="text-red-500 text-sm mt-1">{errors.message}</p>
@@ -110,7 +134,7 @@ export default function Contact() {
 
           <motion.button
             type="submit"
-            className="bg-green-600 text-white py-3 px-6 rounded-lg hover:bg-green-700 transition duration-300"
+            className="bg-[#D4AF37] text-white py-3 px-6 rounded-lg hover:bg-[#b89730] transition duration-300 w-full" // Gold button with hover effect
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -119,7 +143,7 @@ export default function Contact() {
 
           {isSubmitted && (
             <motion.p
-              className="text-green-600 text-center mt-4"
+              className="text-[#D4AF37] text-center mt-4"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5 }}
@@ -127,7 +151,7 @@ export default function Contact() {
               Thank you! Your message has been sent.
             </motion.p>
           )}
-        </form>
+        </motion.form>
       </div>
     </motion.section>
   );
