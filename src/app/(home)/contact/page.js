@@ -83,7 +83,7 @@ export default function ContactUs() {
           
           {/* Information on Top of Image */}
           <div className="absolute bottom-0 left-0 p-8 text-white">
-            <h2 className="text-3xl font-bold mb-4">We're Here to Help</h2>
+            <h2 className="text-3xl font-bold mb-4">We&apos;re Here to Help</h2>
             <p className="text-lg mb-6">Have any questions? Reach out to us anytime, and we’ll be happy to assist you.</p>
             <ul className="space-y-4">
               <li className="flex items-center">

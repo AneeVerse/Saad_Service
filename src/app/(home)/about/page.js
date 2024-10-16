@@ -34,7 +34,7 @@ export default function AboutPage() {
           <h3 className="text-2xl font-semibold text-gray-700">Your Trusted Partner for Document Solutions</h3>
           
           <p className="text-lg text-gray-700 leading-relaxed">
-            Saad Services has been a leader in providing reliable and efficient document attestation, notary, and embassy services for years. Whether you're an individual or a business, we offer streamlined solutions to ensure your documentation needs are met with the highest level of professionalism.
+            Saad Services has been a leader in providing reliable and efficient document attestation, notary, and embassy services for years. Whether you&apos;re an individual or a business, we offer streamlined solutions to ensure your documentation needs are met with the highest level of professionalism.
           </p>
 
           {/* List of Key Services */}
