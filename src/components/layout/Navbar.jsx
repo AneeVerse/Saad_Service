@@ -14,12 +14,12 @@ const sidebarVariants = {
 // Navigation links array
 const navLinks = [
   { name: "About", path: "/about" },
-  { name: "Services", path: "#services", dropdown: true, subLinks: [
+  { name: "Services", path: "/services", dropdown: true, subLinks: [
     { name: "Notary Services", path: "/services/notary" },
     { name: "MEA Services", path: "/services/mea" },
     { name: "Embassy Services", path: "/services/embassy" },
   ]},
-  { name: "Testimonials", path: "#testimonials" },
+  { name: "Testimonials", path: "/testimonials" },
   { name: "Contact", path: "/contact" },
 ];
 
