@@ -22,30 +22,30 @@ const page = () => {
             {servicesData.map((service) => (
               <motion.div
                 key={service.id}
-                className="bg-white shadow-lg rounded-lg p-6 text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white shadow-lg rounded-lg text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
                 {/* Service Image */}
-                <div className="relative h-48 w-full mb-6">
+                <div className="relative h-48 md:h-56 w-full mb-6">
                   <Image
                     src={service.firstImage} // Image path should match service id
                     alt={service.title}
                     layout="fill"
                     objectFit="cover"
-                    className="rounded-lg"
+                    className="rounded-t-lg"
                   />
                 </div>
 
                 {/* Service Title */}
+                <div className="pb-5 px-3">
                 <h3 className="text-2xl font-bold text-gray-800 mb-4">
                   {service.title}
                 </h3>
 
                 {/* Service Description */}
                 <p className="text-gray-600 mb-6">{service.description}</p>
-
                 {/* Learn More Link */}
                 <Link
                   href={`/services/${service.id}`}
@@ -53,6 +53,7 @@ const page = () => {
                 >
                   Learn More
                 </Link>
+                </div>
               </motion.div>
             ))}
           </div>

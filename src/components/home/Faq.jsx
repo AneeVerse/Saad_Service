@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
+import { FaChevronDown, FaChevronUp, FaQuestionCircle } from "react-icons/fa";
 import Typography from "../common/Typography";
 
 export default function FAQ() {
@@ -50,7 +50,10 @@ export default function FAQ() {
             onClick={() => toggleFAQ(index)}
           >
             <div className="flex justify-between items-center">
-              <h3 className="text-xl font-semibold">{faq.question}</h3>
+              <h3 className="text-xl flex gap-3 items-center font-semibold">
+              <FaQuestionCircle className="text-[#D4AF37] text-xl" />
+                {faq.question}
+                </h3>
               {openIndex === index ? (
                 <FaChevronUp className="text-gray-600" />
               ) : (

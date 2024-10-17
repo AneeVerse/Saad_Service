@@ -19,7 +19,7 @@ const navLinks = [
     { name: "MEA Services", path: "/services/mea" },
     { name: "Embassy Services", path: "/services/embassy" },
   ]},
-  { name: "Testimonials", path: "/testimonials" },
+  { name: "FAQ", path: "/faq" },
   { name: "Contact", path: "/contact" },
 ];
 
