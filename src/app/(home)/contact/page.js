@@ -4,19 +4,14 @@ import {
   FaPhoneAlt, FaEnvelope, FaMapMarkerAlt, FaFacebook, FaTwitter, FaInstagram
 } from "react-icons/fa";
 import Image from "next/image";
+import PageHeader from "@/components/layout/PageHeader";
 
 export default function ContactUs() {
   return (
-    <div className="min-h-screen bg-gradient-to-r from-white via-gray-100 to-gray-50 p-8 md:p-16">
-      <motion.h1
-        className="text-5xl font-bold text-[#d7b368] text-center mb-12"
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8 }}
-      >
-        Contact Us
-      </motion.h1>
+    <div className="min-h-screen bg-gradient-to-r from-white via-gray-100 to-gray-50">
+    <PageHeader pageTitle={"Contact Us"}/>
 
+<div className=" py-12 px-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
         {/* Contact Form */}
         <motion.section
@@ -135,6 +130,7 @@ export default function ContactUs() {
           </a>
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }
