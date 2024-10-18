@@ -35,7 +35,7 @@ export default function Statistics() {
 
   return (
     <section ref={ref} className="bg-white py-16 px-6 md:px-12">
-      <div className="grid md:grid-cols-3 gap-8 text-center">
+      <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={inView ? { opacity: 1, y: 0 } : {}}

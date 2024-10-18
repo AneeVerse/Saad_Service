@@ -47,7 +47,7 @@ export default function Contact() {
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="grid md:grid-cols-2 shadow-lg">
+      <div className="grid md:grid-cols-2 shadow-lg max-w-7xl mx-auto">
         {/* Contact Info Section with background image and color overlay */}
         <motion.div
           className="relative p-6 md:p-8 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"

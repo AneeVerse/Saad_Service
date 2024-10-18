@@ -5,7 +5,6 @@ import Typography from './common/Typography';
 
 const OurCoreService = () => {
   return (
-    <div>
        <motion.section
         className="bg-gradient-to-r from-gray-50 to-white p-8 md:p-12 relative z-10"
         initial={{ opacity: 0 }}
@@ -13,6 +12,7 @@ const OurCoreService = () => {
         transition={{ duration: 0.8 }}
       >
         
+    <div className='max-w-7xl mx-auto'>
         <Typography as='h2' variant='h2' className='mb-8 text-center'>Our Core Service</Typography>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
           {[
@@ -40,8 +40,8 @@ const OurCoreService = () => {
             <ServiceCard key={index} {...service} />
           ))}
         </div>
-      </motion.section>
     </div>
+      </motion.section>
   )
 }
 

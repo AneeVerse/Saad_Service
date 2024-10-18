@@ -4,6 +4,7 @@
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import Typography from "../common/Typography";
 import { useState, useEffect } from "react";
+import servicesData from "@/data/servicesData";
 
 const expertiseItems = [
   {
@@ -75,7 +76,8 @@ export default function Expertise() {
   };
 
   return (
-    <section className="py-16 px-6 md:px-12 bg-[#fff]"> {/* Updated background color */}
+    <section className="py-16 px-6 md:px-12 bg-[#fff]"> 
+    <div className="max-w-7xl mx-auto">
       <Typography as="h2" variant="h2" className="text-center mb-8 text-gray-800">
         Our Expertise
       </Typography>
@@ -87,7 +89,7 @@ export default function Expertise() {
             transform: `translateX(calc(-${current * (100 / cardsToShow)}%))`,
           }}
         >
-          {expertiseItems.map((item, index) => (
+          {servicesData.map((item, index) => (
             <div
               key={index}
               className="bg-white rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
@@ -97,16 +99,16 @@ export default function Expertise() {
             >
               {/* Image Section */}
               <img
-                src={item.image}
+                src={item.firstImage}
                 alt={item.title}
-                className="w-full h-[260px] object-cover"
+                className="w-full h-[220px] object-cover"
               />
               {/* Text Content */}
-              <div className="p-6">
-                <Typography as="h3" variant="h4" className="text-gray-800">
+              <div className="px-4 py-5">
+                <Typography as="h4" variant="h5" className="text-gray-800 line-clamp-1">
                   {item.title}
                 </Typography>
-                <Typography as="p" variant="paragraph" className="mt-2 text-gray-600">
+                <Typography as="p" variant="paragraph" className="mt-2 text-gray-600 line-clamp-4">
                   {item.description}
                 </Typography>
               </div>
@@ -123,7 +125,7 @@ export default function Expertise() {
           className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
           onClick={handleRight}
         />
-      </div>
+      </div></div>
     </section>
   );
 }

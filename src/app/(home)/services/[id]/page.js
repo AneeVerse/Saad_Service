@@ -41,9 +41,9 @@ export default function ServiceDetails({ params }) {
 
         {/* Service Title and Description */}
         <h2 className="text-5xl font-bold text-gray-800 mb-4">{service.title}</h2>
-        <p className="text-lg text-gray-600 leading-relaxed mb-6">
+        <div className="text-lg text-gray-600 leading-relaxed mb-6">
           {service.description}
-        </p>
+        </div>
 
         {/* Service Details Section */}
         <div className="flex flex-col-reverse md:flex-row gap-8">

@@ -1,11 +1,10 @@
 "use client";
 // components/Hero.js
-import { FaPlay } from "react-icons/fa";
+import { FaPlay, FaShieldAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import { FaAngleRight, FaAngleLeft } from "react-icons/fa6";
+import { FaAngleRight, FaAngleLeft, FaGlobe, FaClock } from "react-icons/fa6";
 import { useState } from "react";
 import Button from "../common/Button";
-import Typography from "../common/Typography";
 
 // Array of text content
 const textArray = [
@@ -28,6 +27,7 @@ const textArray = [
 
 export default function Hero() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPlaying, setIsPlaying] = useState(false);
 
   // Handle next text change
   const handleNext = () =>
@@ -41,6 +41,10 @@ export default function Hero() {
       prevIndex === 0 ? textArray.length - 1 : prevIndex - 1
     );
 
+  const handlePlay = () => {
+    setIsPlaying(true);
+  };
+
   return (
     <motion.section
       className="relative bg-gradient-to-r from-[#f5e0b8] to-white py-16 px-6 md:px-12 overflow-hidden"
@@ -48,18 +52,13 @@ export default function Hero() {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
     >
-      {/* SVG Background Decorations */}
-      <motion.div
-        className="absolute -top-20 -left-16 w-72 h-72 bg-[#D4AF37] rounded-full opacity-30"
-        animate={{ y: [0, 20, 0] }}
-        transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-      />
-      <motion.div
-        className="absolute top-10 right-0 w-96 h-96 bg-[#f9e8c2] rounded-full opacity-40"
-        animate={{ scale: [1, 1.2, 1], rotate: [0, 45, 0] }}
-        transition={{ repeat: Infinity, duration: 8, ease: "easeInOut" }}
-      />
-    
+      {/* Background Icons */}
+      <div className="absolute inset-0 z-0 pointer-events-none">
+        <FaGlobe className="absolute top-20 left-10 w-[100px] h-[100px] text-[#D4AF37] opacity-10" />
+        <FaClock className="absolute top-1/2 right-20 w-[150px] h-[150px] text-[#D4AF37] opacity-10" />
+        <FaShieldAlt className="absolute bottom-10 left-1/3 w-[120px] h-[120px] text-[#D4AF37] opacity-10" />
+      </div>
+
       {/* Content Section */}
       <div className="grid md:grid-cols-2 max-w-[1280px] mx-auto gap-12 items-center relative z-10">
         {/* Text Content */}
@@ -84,7 +83,7 @@ export default function Hero() {
             {textArray[currentIndex].pra}
           </motion.p>
           <div className="flex items-center gap-4">
-            <Button text="Get Started" type="secondary" onClick={() => alert("hello")} />
+            <Button text="Get Started" type="secondary" onClick={() => alert("Get Started")} />
             {/* Arrows for Text Navigation */}
             <div className="flex gap-3">
               <FaAngleLeft
@@ -99,21 +98,33 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Embedded Video */}
+        {/* Video Section */}
         <motion.div
-          className="rounded-xl overflow-hidden shadow-lg"
+          className="relative z-30 rounded-xl overflow-hidden shadow-lg"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <iframe
+          {/* Replace the embedded YouTube video with a local video */}
+          <video
             className="w-full h-64 md:h-80 lg:h-96"
-            src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-            title="Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
+            controls
+            poster="/images/home/pen-doc.webp" // Add a placeholder image for the video
+            onPlay={handlePlay}
+          >
+            <source src="/images/home/hero-vid.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+
+          {/* Optional Play Button Overlay */}
+          {!isPlaying && (
+            <div
+              className="absolute inset-0 flex items-center justify-center bg-black bg-opacity-20 cursor-pointer"
+              onClick={() => document.querySelector("video").play()}
+            >
+              <FaPlay className="text-white text-5xl opacity-80" />
+            </div>
+          )}
         </motion.div>
       </div>
     </motion.section>

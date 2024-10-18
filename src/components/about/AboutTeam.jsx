@@ -7,18 +7,8 @@ export default function AboutTeam() {
   const teamMembers = [
     {
       name: "Saad Ahmed Momin",
-      role: "Founder & CEO",
-      image: "/images/about/profile.webp",
-    },
-    {
-      name: "John Doe",
-      role: "COO",
-      image: "/images/about/profile.webp",
-    },
-    {
-      name: "Jane Smith",
-      role: "Head of Legal Services",
-      image: "/images/about/profile.webp",
+      role: "Founder & Owner & Director",
+      image: "/images/about/co-founder.png",
     },
   ];
 
@@ -60,13 +50,13 @@ export default function AboutTeam() {
         {/* Team Card Section - Half Screen */}
         <div className="relative w-full md:w-1/2 h-[300px] bg-white rounded-b-lg md:rounded-bl-none md:rounded-r-lg flex items-center justify-center">
           <div
-            className="absolute top-1/2 -translate-y-1/2 left-2 z-20 cursor-pointer p-3 bg-white shadow-md rounded-full transition-transform duration-300 transform hover:shadow-lg"
+            className={`${teamMembers.length === 1 ? " hidden ": " block "} absolute top-1/2 -translate-y-1/2 left-2 z-20 cursor-pointer p-3 bg-white shadow-md rounded-full transition-transform duration-300 transform hover:shadow-lg`}
             onClick={handlePrev}
           >
             <FaAngleLeft className="text-2xl text-gray-800" />
           </div>
           <div
-            className="absolute top-1/2 -translate-y-1/2 right-2 z-20 cursor-pointer p-3 bg-white shadow-md rounded-full transition-transform duration-300 transform hover:shadow-lg"
+            className={`${teamMembers.length === 1 ? " hidden ": " block "} absolute top-1/2 -translate-y-1/2 right-2 z-20 cursor-pointer p-3 bg-white shadow-md rounded-full transition-transform duration-300 transform hover:shadow-lg`}
             onClick={handleNext}
           >
             <FaAngleRight className="text-2xl text-gray-800" />
@@ -96,7 +86,7 @@ export default function AboutTeam() {
                   alt={member.name}
                   width={150}
                   height={150}
-                  className="mx-auto rounded-full ring-4 ring-[#D4AF37]"
+                  className="mx-auto w-[150px] h-[150px] object-cover rounded-full ring-4 ring-[#D4AF37]"
                 />
                 <h3 className="text-2xl font-semibold text-gray-800 mt-4">
                   {member.name}

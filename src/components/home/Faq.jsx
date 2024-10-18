@@ -41,6 +41,7 @@ export default function FAQ() {
 
   return (
     <section className="py-16 px-6 md:px-12 bg-gray-50">      
+    <div className="max-w-7xl mx-auto">
       <Typography as="h2" variant="h2" className="text-center mb-8">Frequently Asked Questions</Typography>
       <div className="space-y-4">
         {faqs.map((faq, index) => (
@@ -77,6 +78,7 @@ export default function FAQ() {
             </AnimatePresence>
           </div>
         ))}
+      </div>
       </div>
     </section>
   );
