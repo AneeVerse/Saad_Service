@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
     <footer className="bg-[#1e1e1e] text-white py-12">
@@ -27,19 +29,24 @@ export default function Footer() {
             <h3 className="text-2xl font-semibold mb-4 text-[#D4AF37]">Quick Links</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <a href="/about" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/about" className="hover:text-[#D4AF37] transition duration-300">
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/services" className="hover:text-[#D4AF37] transition duration-300">
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/contact" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/contact" className="hover:text-[#D4AF37] transition duration-300">
                   Contact
-                </a>
+                </Link>
+              </li>
+              <li>
+                <Link href="/faq" className="hover:text-[#D4AF37] transition duration-300">
+                  FAQ
+                </Link>
               </li>
             </ul>
           </div>
@@ -49,24 +56,24 @@ export default function Footer() {
             <h3 className="text-2xl font-semibold mb-4 text-[#D4AF37]">Services</h3>
             <ul className="space-y-3 text-gray-400">
               <li>
-                <a href="/services/attestation" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/services/attestation" className="hover:text-[#D4AF37] transition duration-300">
                   Document Attestation
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/legalization" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/services/legalization" className="hover:text-[#D4AF37] transition duration-300">
                   Legalization Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/notary" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/services/notary" className="hover:text-[#D4AF37] transition duration-300">
                   Notary Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="/services/translation" className="hover:text-[#D4AF37] transition duration-300">
+                <Link href="/services/translation" className="hover:text-[#D4AF37] transition duration-300">
                   Translation Services
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
