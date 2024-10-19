@@ -16,35 +16,35 @@ const sidebarVariants = {
 
 // Navigation links array with dropdown for Services and Documents
 const navLinks = [
-  { name: "About", path: "/about", icon: <FaUserCircle /> },  
+  { name: "About", path: "/about", icon: <FaUserCircle size={18} /> },  
   {
     name: "Documents",
     path: "/documents",
-    icon: <FaFileAlt />,
+    icon: <FaFileAlt size={18} />,
     dropdown: true,
     subLinks: documentData.map((doc) => ({
       name: doc.title,
       path: `/documents/${doc.id}`,
-      icon: <FaFileAlt />,
+      icon: <FaFileAlt size={14} />,
     })),
   },
   {
     name: "Services",
     path: "/services",
-    icon: <FaTasks />,
+    icon: <FaTasks size={18} />,
     dropdown: true,
     subLinks: [
-      { name: "Document Attestation", path: "/services/attestation", icon: <FaFileSignature /> },
-      { name: "Legalization Services", path: "/services/legalization", icon: <FaFileAlt /> },
-      { name: "Notary Services", path: "/services/notary", icon: <FaUniversity /> },
-      { name: "Translation Services", path: "/services/translation", icon: <FaLanguage /> },
-      { name: "MEA Attestation", path: "/services/mea-apostille", icon: <FaGlobe /> },
-      { name: "Visa Assistance", path: "/services/visa-assistance", icon: <FaPassport /> },
-      { name: "Embassy Services", path: "/services/embassy-services", icon: <FaFileSignature /> },
+      { name: "Document Attestation", path: "/services/attestation", icon: <FaFileSignature size={14} /> },
+      { name: "Legalization Services", path: "/services/legalization", icon: <FaFileAlt size={14} /> },
+      { name: "Notary Services", path: "/services/notary", icon: <FaUniversity size={14} /> },
+      { name: "Translation Services", path: "/services/translation", icon: <FaLanguage size={14} /> },
+      { name: "MEA Attestation", path: "/services/mea-apostille", icon: <FaGlobe size={14} /> },
+      { name: "Visa Assistance", path: "/services/visa-assistance", icon: <FaPassport size={14} /> },
+      { name: "Embassy Services", path: "/services/embassy-services", icon: <FaFileSignature size={14} /> },
     ],
   },
-  { name: "FAQ", path: "/faq", icon: <FaQuestionCircle /> },
-  { name: "Contact", path: "/contact", icon: <FaEnvelope /> },
+  { name: "FAQ", path: "/faq", icon: <FaQuestionCircle size={18} /> },
+  { name: "Contact", path: "/contact", icon: <FaEnvelope size={18} /> },
 ];
 
 export default function Navbar() {
@@ -115,14 +115,14 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-8 shadow-lg overflow-y-auto scrollbar-thin scrollbar-thumb-[#d7b368] scrollbar-track-gray-200"
+        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-6 shadow-lg overflow-y-auto  scrollbar-thin scrollbar-thumb-[#d7b368] scrollbar-track-gray-200 "
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={sidebarVariants}
       >
         <div className="flex justify-between items-center mb-6">
           {/* Logo */}
-          <div className="text-3xl flex gap-2 items-center font-bold text-[#d7b368]">
+          <div className="text-2xl flex gap-2 items-center font-bold text-[#d7b368]">
             <div className="relative w-8 h-8">
               <Image
                 src="/images/logo-saad.png"
@@ -132,10 +132,10 @@ export default function Navbar() {
                 priority={true}
               />
             </div>
-            <span className="text-lg sm:text-xl">{"Saad Service".toUpperCase()}</span>
+            <span className="text-[18px]">{"Saad Service".toUpperCase()}</span>
           </div>
           {/* Close Button */}
-          <button className="text-3xl text-gray-700" onClick={toggleSidebar}>
+          <button className="text-2xl text-gray-700" onClick={toggleSidebar}>
             <FaTimes />
           </button>
         </div>
@@ -147,7 +147,7 @@ export default function Navbar() {
               <Link
                 href={link.path}
                 onClick={toggleSidebar}
-                className={`text-2xl flex items-center gap-3 ${
+                className={`text-lg flex items-center gap-3 ${
                   isActive(link.path) ? "text-[#D4AF37]" : "text-gray-700"
                 } hover:text-[#D4AF37] transition`}
               >
@@ -161,7 +161,7 @@ export default function Navbar() {
                       key={subIndex}
                       href={subLink.path}
                       onClick={toggleSidebar}
-                      className={`flex items-center gap-3 ${
+                      className={`text-sm flex items-center gap-2 ${
                         isActive(subLink.path) ? "text-[#D4AF37]" : "text-gray-700"
                       } hover:text-[#D4AF37] transition`}
                     >

@@ -38,6 +38,14 @@ export default function Contact() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    const validationErrors = validateForm();
+    setErrors(validationErrors);
+
+    if (Object.keys(validationErrors).length > 0) {
+      return; // Stop submission if there are errors
+    }
+
     setStatus({ ...status, submitting: true });
 
     try {
@@ -79,7 +87,6 @@ export default function Contact() {
     }
   };
 
-
   // Trigger popup display for 5 seconds
   const triggerPopup = () => {
     setShowPopup(true);
@@ -90,11 +97,11 @@ export default function Contact() {
 
   return (
     <>
-     {/* Popup Notification */}
-     {showPopup && (
+      {/* Popup Notification */}
+      {showPopup && (
         <motion.div
-        initial={{translateX: "100%"}}
-        animate={{translate:"-100%"}}
+          initial={{ translateX: "100%" }}
+          animate={{ translate: "-100%" }}
           className={`fixed top-[100px] right-4 p-4 rounded-md shadow-lg z-50 ${
             status.error ? "bg-red-500" : "bg-green-500"
           } text-white flex items-center`}
@@ -107,126 +114,123 @@ export default function Contact() {
           {status.message}
         </motion.div>
       )}
-    <motion.section
-      className="py-12 px-4 md:px-12 bg-[#f5f5f5]"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.6 }}
-    >
-      <div className="grid md:grid-cols-2 shadow-lg max-w-7xl mx-auto">
-        {/* Contact Info Section */}
-        <motion.div
-          className="relative p-6 md:p-8 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div
-            className="absolute inset-0 bg-cover bg-center rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
-            style={{
-              backgroundImage: `url('/images/home/pen-doc.webp')`,
-            }}
-          ></div>
-          <div className="absolute inset-0 bg-black opacity-60 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"></div>
-          <div className="relative text-white space-y-6">
-            <h2 className="text-2xl md:text-3xl font-bold">
-              Let’s Discuss Your Needs
-            </h2>
-            <p className="text-gray-300">
-              Feel free to contact us for any inquiries or assistance. Our team
-              is ready to help.
-            </p>
-            <p className="text-lg">📧 support@saadservice.com</p>
-            <p className="text-lg">📞 +1 234 567 890</p>
-          </div>
-        </motion.div>
-
-        {/* Contact Form Section */}
-        <motion.form
-          className="space-y-4 md:space-y-6 bg-white p-6 md:p-8 rounded-b-lg md:rounded-r-lg md:rounded-bl-none"
-          onSubmit={handleSubmit}
-          initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          <div>
-            <input
-              type="text"
-              name="name"
-              value={formData.name}
-              onChange={handleChange}
-              placeholder="Your Name"
-              className={`w-full p-4 rounded-lg border ${
-                errors.name ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
-            />
-            {errors.name && (
-              <p className="text-red-500 text-sm mt-1">{errors.name}</p>
-            )}
-          </div>
-
-          <div>
-            <input
-              type="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              placeholder="Your Email"
-              className={`w-full p-4 rounded-lg border ${
-                errors.email ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
-            />
-            {errors.email && (
-              <p className="text-red-500 text-sm mt-1">{errors.email}</p>
-            )}
-          </div>
-
-          <div>
-            <input
-              type="tel"
-              name="phone"
-              value={formData.phone}
-              onChange={handleChange}
-              placeholder="Your Phone"
-              className={`w-full p-4 rounded-lg border ${
-                errors.phone ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
-            />
-            {errors.phone && (
-              <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
-            )}
-          </div>
-
-          <div>
-            <textarea
-              name="message"
-              value={formData.message}
-              onChange={handleChange}
-              rows="4"
-              placeholder="Your Message"
-              className={`w-full p-4 rounded-lg border ${
-                errors.message ? "border-red-500" : "border-gray-300"
-              } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
-            ></textarea>
-            {errors.message && (
-              <p className="text-red-500 text-sm mt-1">{errors.message}</p>
-            )}
-          </div>
-
-          <motion.button
-            type="submit"
-            className="bg-[#D4AF37] text-white py-3 px-6 rounded-lg hover:bg-[#b89730] transition duration-300 w-full"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            disabled={status.submitting}
+      <motion.section
+        className="py-12 px-4 md:px-12 bg-[#f5f5f5]"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <div className="grid md:grid-cols-2 shadow-lg max-w-7xl mx-auto">
+          {/* Contact Info Section */}
+          <motion.div
+            className="relative p-6 md:p-8 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
           >
-            {status.submitting ? "Sending..." : "Send Message"}
-          </motion.button>
-        </motion.form>
-      </div>
+            <div
+              className="absolute inset-0 bg-cover bg-center rounded-t-lg md:rounded-l-lg md:rounded-tr-none"
+              style={{
+                backgroundImage: `url('/images/home/pen-doc.webp')`,
+              }}
+            ></div>
+            <div className="absolute inset-0 bg-black opacity-60 rounded-t-lg md:rounded-l-lg md:rounded-tr-none"></div>
+            <div className="relative text-white space-y-6">
+              <h2 className="text-2xl md:text-3xl font-bold">
+                Let’s Discuss Your Needs
+              </h2>
+              <p className="text-gray-300">
+                Feel free to contact us for any inquiries or assistance. Our team
+                is ready to help.
+              </p>
+              <p className="text-lg">📧 support@saadservice.com</p>
+              <p className="text-lg">📞 +1 234 567 890</p>
+            </div>
+          </motion.div>
 
-     
-    </motion.section>
+          {/* Contact Form Section */}
+          <motion.form
+            className="space-y-4 md:space-y-6 bg-white p-6 md:p-8 rounded-b-lg md:rounded-r-lg md:rounded-bl-none"
+            onSubmit={handleSubmit}
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+          >
+            <div>
+              <input
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="Your Name"
+                className={`w-full p-4 rounded-lg border ${
+                  errors.name ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
+              />
+              {errors.name && (
+                <p className="text-red-500 text-sm mt-1">{errors.name}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="Your Email"
+                className={`w-full p-4 rounded-lg border ${
+                  errors.email ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
+              />
+              {errors.email && (
+                <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+              )}
+            </div>
+
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                placeholder="Your Phone"
+                className={`w-full p-4 rounded-lg border ${
+                  errors.phone ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
+              />
+              {errors.phone && (
+                <p className="text-red-500 text-sm mt-1">{errors.phone}</p>
+              )}
+            </div>
+
+            <div>
+              <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleChange}
+                rows="4"
+                placeholder="Your Message"
+                className={`w-full p-4 rounded-lg border ${
+                  errors.message ? "border-red-500" : "border-gray-300"
+                } focus:outline-none focus:ring-2 focus:ring-[#D4AF37] transition duration-300`}
+              ></textarea>
+              {errors.message && (
+                <p className="text-red-500 text-sm mt-1">{errors.message}</p>
+              )}
+            </div>
+
+            <motion.button
+              type="submit"
+              className="bg-[#D4AF37] text-white py-3 px-6 rounded-lg hover:bg-[#b89730] transition duration-300 w-full"
+              whileTap={{ scale: 0.95 }}
+              disabled={status.submitting}
+            >
+              {status.submitting ? "Sending..." : "Send Message"}
+            </motion.button>
+          </motion.form>
+        </div>
+      </motion.section>
     </>
   );
 }
