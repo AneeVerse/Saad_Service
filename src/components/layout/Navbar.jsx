@@ -57,7 +57,7 @@ export default function Navbar() {
   const isActive = (path) => pathname === path;
 
   return (
-    <header className="fixed w-full border-b-[1px] border-gray-200 bg-white left-0 z-40 top-0">
+    <header className="fixed w-full border-b-[1px] border-gray-200 bg-white left-0 z-50 top-0">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex h-[90px] justify-between items-center">
           {/* Logo */}
