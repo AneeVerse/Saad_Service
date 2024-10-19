@@ -6,7 +6,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 text-center md:text-left">
           {/* About Section */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 text-[#D4AF37]">SAAD SERVICE</h3>
+            <div className="flex items-center justify-center md:justify-start mb-4">
+              <img
+                src="/images/logo-saad-tr.png"
+                alt="Saad Service Logo"
+                className="w-10 h-10 mr-3"
+              />
+              <h3 className="text-2xl font-bold text-[#D4AF37]">SAAD SERVICE</h3>
+            </div>
             <p className="text-gray-400 leading-relaxed text-sm">
               Saad Service is your trusted partner for document attestation, Apostille services, and embassy certifications. We serve clients across 200+ countries with unmatched professionalism and efficiency.
             </p>
@@ -15,7 +22,7 @@ export default function Footer() {
             </p>
           </div>
 
-          {/* Links Section */}
+          {/* Quick Links Section */}
           <div>
             <h3 className="text-2xl font-semibold mb-4 text-[#D4AF37]">Quick Links</h3>
             <ul className="space-y-3 text-gray-400">
@@ -27,11 +34,6 @@ export default function Footer() {
               <li>
                 <a href="/services" className="hover:text-[#D4AF37] transition duration-300">
                   Services
-                </a>
-              </li>
-              <li>
-                <a href="/testimonials" className="hover:text-[#D4AF37] transition duration-300">
-                  Testimonials
                 </a>
               </li>
               <li>
@@ -115,18 +117,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Saad Service. All rights reserved.
           </p>
-          {/* <div className="flex justify-center space-x-4 text-sm text-gray-400">
-            <a href="/privacy" className="hover:text-[#D4AF37] transition duration-300">
-              Privacy Policy
-            </a>
-            <a href="/terms" className="hover:text-[#D4AF37] transition duration-300">
-              Terms of Service
-            </a>
-            <a href="/sitemap" className="hover:text-[#D4AF37] transition duration-300">
-              Sitemap
-            </a>
-          </div>*/}
-        </div> 
+        </div>
       </div>
     </footer>
   );

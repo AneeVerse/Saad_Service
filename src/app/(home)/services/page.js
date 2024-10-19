@@ -3,7 +3,7 @@ import PageHeader from "@/components/layout/PageHeader";
 import servicesData from "@/data/servicesData";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image"; // Importing Image for service images
+import Image from "next/image";
 
 const page = () => {
   return (
@@ -16,9 +16,9 @@ const page = () => {
       {/* Page Header */}
       <PageHeader pageTitle={"Our Services"} />
 
-      <div className="py-12 px-6">
+      <div className="py-6 px-4 sm:px-6 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {servicesData.map((service) => (
               <motion.div
                 key={service.id}
@@ -28,7 +28,7 @@ const page = () => {
                 transition={{ duration: 0.8 }}
               >
                 {/* Service Image */}
-                <div className="relative h-48 md:h-56 w-full mb-6">
+                <div className="relative h-40 md:h-48 w-full mb-4">
                   <Image
                     src={service.firstImage} // Image path should match service id
                     alt={service.title}
@@ -39,20 +39,23 @@ const page = () => {
                 </div>
 
                 {/* Service Title */}
-                <div className="pb-5 px-3">
-                <h3 className="text-2xl font-bold text-gray-800 mb-4">
-                  {service.title}
-                </h3>
+                <div className="pb-4 px-3">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-800 mb-3">
+                    {service.title}
+                  </h3>
 
-                {/* Service Description */}
-                <p className="text-gray-600 mb-6">{service.description}</p>
-                {/* Learn More Link */}
-                <Link
-                  href={`/services/${service.id}`}
-                  className="text-[#D4AF37] font-semibold hover:text-[#b89730] transition"
-                >
-                  Learn More
-                </Link>
+                  {/* Service Description */}
+                  <p className="text-gray-600 mb-4 text-sm md:text-base">
+                    {service.description}
+                  </p>
+
+                  {/* Learn More Link */}
+                  <Link
+                    href={`/services/${service.id}`}
+                    className="text-[#D4AF37] font-semibold hover:text-[#b89730] transition"
+                  >
+                    Learn More
+                  </Link>
                 </div>
               </motion.div>
             ))}

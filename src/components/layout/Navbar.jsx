@@ -5,7 +5,8 @@ import { FaBars, FaTimes, FaUserCircle, FaTasks, FaQuestionCircle, FaEnvelope, F
 import { FaGlobe, FaFileSignature, FaLanguage, FaPassport } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
-import { usePathname } from "next/navigation"; // Import useRouter
+import { usePathname } from "next/navigation";
+import documentData from "@/data/documentData";
 
 // Sidebar animation variants for smooth transitions
 const sidebarVariants = {
@@ -13,11 +14,20 @@ const sidebarVariants = {
   visible: { x: 0, opacity: 1, transition: { duration: 0.5, ease: "easeInOut" } },
 };
 
-// Navigation links array with dropdown for Services
+// Navigation links array with dropdown for Services and Documents
 const navLinks = [
   { name: "About", path: "/about", icon: <FaUserCircle /> },  
-  { name: "Documents", path: "/documents", icon: <FaFileAlt /> },  // New Addition
-
+  {
+    name: "Documents",
+    path: "/documents",
+    icon: <FaFileAlt />,
+    dropdown: true,
+    subLinks: documentData.map((doc) => ({
+      name: doc.title,
+      path: `/documents/${doc.id}`,
+      icon: <FaFileAlt />,
+    })),
+  },
   {
     name: "Services",
     path: "/services",
@@ -39,7 +49,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname(); // Use useRouter to get current route
+  const pathname = usePathname();
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
@@ -57,8 +67,8 @@ export default function Navbar() {
                 src="/images/logo-saad.png"
                 alt="Saad Service Logo"
                 layout="fill"
-                objectFit="contain" // Ensures the image scales well without distortion
-                priority={true} // Improves performance by loading the logo quickly
+                objectFit="contain"
+                priority={true}
               />
             </div>
             <span className="text-lg sm:text-xl md:text-2xl">{"Saad Service".toUpperCase()}</span>
@@ -76,7 +86,7 @@ export default function Navbar() {
                 >
                   {link.name}
                 </Link>
-                {/* Dropdown for Services */}
+                {/* Dropdown for Services or Documents */}
                 {link.dropdown && (
                   <div className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg py-4 space-y-2">
                     {link.subLinks.map((subLink, subIndex) => (
@@ -105,7 +115,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-8 shadow-lg"
+        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-8 shadow-lg overflow-y-auto scrollbar-thin scrollbar-thumb-[#d7b368] scrollbar-track-gray-200"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={sidebarVariants}
@@ -143,7 +153,7 @@ export default function Navbar() {
               >
                 {link.icon} {link.name}
               </Link>
-              {/* Sub-links for Services */}
+              {/* Sub-links for Documents and Services */}
               {link.dropdown && (
                 <div className="ml-4 mt-2 flex flex-col space-y-2">
                   {link.subLinks.map((subLink, subIndex) => (

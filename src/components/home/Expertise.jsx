@@ -92,10 +92,10 @@ export default function Expertise() {
           {servicesData.map((item, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="bg-white border rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
               style={{
                 flex: `0 0 calc((100% - ${cardsToShow * 20}px) / ${cardsToShow})`, // Adjust the card width based on the number of visible cards and gap
-              }}
+             }}
             >
               {/* Image Section */}
               <img
@@ -115,17 +115,19 @@ export default function Expertise() {
             </div>
           ))}
         </div>
-      </div>
-      <div className="flex justify-center gap-3 mt-6">
+        <div className="">
         <FaAngleLeft
-          className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+          className="text-[#D4AF37] absolute  top-1/2  z-40 cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
           onClick={handleLeft}
         />
         <FaAngleRight
-          className="text-[#D4AF37] cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
+          className="text-[#D4AF37]  absolute right-0  top-1/2  z-40 cursor-pointer border border-[#D4AF37] hover:bg-[#D4AF37] hover:text-white bg-white w-10 h-10 p-2 rounded-full transition-all"
           onClick={handleRight}
         />
-      </div></div>
+      </div>
+      </div>
+      
+      </div>
     </section>
   );
 }
