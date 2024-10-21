@@ -2,6 +2,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const GetStarted = () => {
   return (
@@ -36,9 +37,9 @@ const GetStarted = () => {
         <p className="text-lg md:text-xl text-white mb-8">
           Contact us today to begin your document attestation, translation, or legalization journey. Our expert team is ready to assist.
         </p>
-        <button className="bg-white text-[#D4AF37] py-3 px-8 rounded-lg font-bold hover:bg-gray-100 transition">
+        <Link href={"/contact"} className="bg-white inline-block text-[#D4AF37] py-3 px-8 rounded-lg font-bold hover:bg-gray-100 transition">
           Contact Us Now
-        </button>
+        </Link>
       </motion.section>
     </div>
     </div>

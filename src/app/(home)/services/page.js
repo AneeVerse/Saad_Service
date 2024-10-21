@@ -18,17 +18,20 @@ const page = () => {
 
       <div className="py-6 px-4 sm:px-6 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1  place-items-center md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {servicesData.map((service) => (
               <motion.div
                 key={service.id}
-                className="bg-white shadow-lg rounded-lg text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white max-w-[480px] shadow-lg rounded-lg text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
+              >  <Link 
+                  href={`/services/${service.id}`}
+                  className="block"
               >
                 {/* Service Image */}
-                <div className="relative h-40 md:h-48 w-full mb-4">
+                <div className="relative h-56 sm:h-[260px] w-full mb-4">
                   <Image
                     src={service.firstImage} // Image path should match service id
                     alt={service.title}
@@ -50,13 +53,13 @@ const page = () => {
                   </p>
 
                   {/* Learn More Link */}
-                  <Link
-                    href={`/services/${service.id}`}
+                  <span
                     className="text-[#D4AF37] font-semibold hover:text-[#b89730] transition"
                   >
                     Learn More
-                  </Link>
+                  </span>
                 </div>
+                </Link>
               </motion.div>
             ))}
           </div>

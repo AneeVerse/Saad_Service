@@ -16,7 +16,23 @@ const sidebarVariants = {
 
 // Navigation links array with dropdown for Services and Documents
 const navLinks = [
-  { name: "About", path: "/about", icon: <FaUserCircle size={18} /> },  
+  { name: "About", path: "/about", icon: <FaUserCircle size={18} /> },
+  {
+    name: "Services",
+    path: "/services",
+    icon: <FaTasks size={18} />,
+    dropdown: true,
+    subLinks: [
+      { name: "Document Attestation", path: "/services/attestation", icon: <FaFileSignature className="text-lg lg:text-3xl"  /> },
+      { name: "Legalization Services", path: "/services/legalization", icon: <FaFileAlt className="text-lg lg:text-3xl"   /> },
+      { name: "Notary Services", path: "/services/notary", icon: <FaUniversity className="text-lg lg:text-3xl"   /> },
+      { name: "Translation Services", path: "/services/translation", icon: <FaLanguage className="text-lg lg:text-3xl"   /> },
+      { name: "MEA Attestation", path: "/services/mea-apostille", icon: <FaGlobe className="text-lg lg:text-3xl"   /> },
+      { name: "Visa Assistance", path: "/services/visa-assistance", icon: <FaPassport className="text-lg lg:text-3xl"   /> },
+      { name: "Embassy Services", path: "/services/embassy-services", icon: <FaFileSignature className="text-lg lg:text-3xl"   /> },
+    ],
+  },
+  { name: "Visa Assistance", path: "/visa-assistance", icon: <FaPassport size={18} /> },
   {
     name: "Documents",
     path: "/documents",
@@ -25,23 +41,8 @@ const navLinks = [
     subLinks: documentData.map((doc) => ({
       name: doc.title,
       path: `/documents/${doc.id}`,
-      icon: <FaFileAlt size={14} />,
+      icon: <FaFileAlt className="text-lg lg:text-3xl"   />,
     })),
-  },
-  {
-    name: "Services",
-    path: "/services",
-    icon: <FaTasks size={18} />,
-    dropdown: true,
-    subLinks: [
-      { name: "Document Attestation", path: "/services/attestation", icon: <FaFileSignature size={14} /> },
-      { name: "Legalization Services", path: "/services/legalization", icon: <FaFileAlt size={14} /> },
-      { name: "Notary Services", path: "/services/notary", icon: <FaUniversity size={14} /> },
-      { name: "Translation Services", path: "/services/translation", icon: <FaLanguage size={14} /> },
-      { name: "MEA Attestation", path: "/services/mea-apostille", icon: <FaGlobe size={14} /> },
-      { name: "Visa Assistance", path: "/services/visa-assistance", icon: <FaPassport size={14} /> },
-      { name: "Embassy Services", path: "/services/embassy-services", icon: <FaFileSignature size={14} /> },
-    ],
   },
   { name: "FAQ", path: "/faq", icon: <FaQuestionCircle size={18} /> },
   { name: "Contact", path: "/contact", icon: <FaEnvelope size={18} /> },
@@ -75,9 +76,9 @@ export default function Navbar() {
           </Link>
 
           {/* Menu for larger screens */}
-          <nav className="hidden md:flex space-x-8 items-center">
+          <nav className="hidden lg:flex space-x-8 items-center">
             {navLinks.map((link, index) => (
-              <div key={index} className="relative group">
+              <div key={index} className="group">
                 <Link
                   href={link.path}
                   className={`text-lg font-semibold ${
@@ -86,20 +87,24 @@ export default function Navbar() {
                 >
                   {link.name}
                 </Link>
-                {/* Dropdown for Services or Documents */}
+                {/* Mega Menu for Services or Documents */}
                 {link.dropdown && (
-                  <div className="absolute left-0 hidden group-hover:flex flex-col bg-white shadow-lg rounded-lg py-4 space-y-2">
-                    {link.subLinks.map((subLink, subIndex) => (
-                      <Link
-                        key={subIndex}
-                        href={subLink.path}
-                        className={`px-4 py-2 min-w-max ${
-                          isActive(subLink.path) ? "text-[#D4AF37]" : "text-gray-700"
-                        } hover:bg-gray-100 transition`}
-                      >
-                        {subLink.name}
-                      </Link>
-                    ))}
+                  <div className="absolute left-0 hidden group-hover:flex flex-col w-full  bg-white shadow-lg  py-6  z-50">
+                    <div className="max-w-7xl mx-auto flex flex-row flex-wrap gap-6 px-8">
+                      {link.subLinks.map((subLink, subIndex) => (
+                        <Link
+                          key={subIndex}
+                          href={subLink.path}
+                          className={`bg-white border border-gray-200 p-4 h-[100px] w-[260px] flex flex-col justify-center rounded-lg shadow-md hover:bg-[#D4AF37] hover:text-white transition-colors duration-300 ease-in-out ${
+                            isActive(subLink.path) ? "text-[#D4AF37]" : "text-gray-700"
+                          }`}
+                        >
+                          <div className="flex items-center gap-4 text-lg">
+                            {subLink.icon} <span>{subLink.name}</span>
+                          </div>
+                        </Link>
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
@@ -107,7 +112,7 @@ export default function Navbar() {
           </nav>
 
           {/* Hamburger Menu for Mobile */}
-          <button className="md:hidden text-3xl text-gray-700" onClick={toggleSidebar}>
+          <button className="lg:hidden text-3xl text-gray-700" onClick={toggleSidebar}>
             <FaBars />
           </button>
         </div>
@@ -115,7 +120,7 @@ export default function Navbar() {
 
       {/* Mobile Sidebar */}
       <motion.div
-        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-6 shadow-lg overflow-y-auto  scrollbar-thin scrollbar-thumb-[#d7b368] scrollbar-track-gray-200 "
+        className="fixed inset-0 max-w-[280px] bg-white text-gray-800 z-40 p-6 shadow-lg overflow-y-auto scrollbar-thin scrollbar-thumb-[#d7b368] scrollbar-track-gray-200"
         initial="hidden"
         animate={isOpen ? "visible" : "hidden"}
         variants={sidebarVariants}

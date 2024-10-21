@@ -9,4 +9,5 @@
 
 body{
   overflow-x: hidden;
+  font-family: var(--font-poppins);
 }

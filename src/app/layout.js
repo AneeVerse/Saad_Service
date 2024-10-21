@@ -1,19 +1,28 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Poppins } from "next/font/google"; // Import Poppins from Google Fonts
 import Navbar from "@/components/layout/Navbar";
 import NextTopLoader from 'nextjs-toploader'
 import FloatingActionButton from "@/components/layout/FloatingActionButton";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+
+
+// const geistSans = localFont({
+//   src: "./fonts/GeistVF.woff",
+//   variable: "--font-geist-sans",
+//   weight: "100 900",
+// });
+// const geistMono = localFont({
+//   src: "./fonts/GeistMonoVF.woff",
+//   variable: "--font-geist-mono",
+//   weight: "100 900",
+// });
 
 export const metadata = {
   title: "Saad Service",
@@ -24,9 +33,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-                 <NextTopLoader
+       className={`${poppins.variable}`}
+      >                 <NextTopLoader
          color="#D4AF37"
          initialPosition={0.08}
          height={3}

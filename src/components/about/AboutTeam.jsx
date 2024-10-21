@@ -10,6 +10,11 @@ export default function AboutTeam() {
       role: "Founder & Owner & Director",
       image: "/images/about/co-founder.png",
     },
+    {
+      name: "Abdullah",
+      role: "Team Member",
+      image: "/images/about/profile.webp",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

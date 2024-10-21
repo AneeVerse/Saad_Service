@@ -18,17 +18,22 @@ export default function DocumentTypes() {
 
       <div className="py-6 px-4 sm:px-6 md:py-12">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 place-items-center lg:grid-cols-3 gap-6 md:gap-8">
             {documentData.map((service) => (
               <motion.div
                 key={service.id}
-                className="bg-white shadow-lg rounded-lg text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
+                className="bg-white shadow-lg max-w-[480px] rounded-lg text-center overflow-hidden hover:shadow-xl transition-shadow duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
               >
+                <Link 
+                    href={`/documents/${service.id}`}
+                    className="block"
+                    >
+                      <div>
                 {/* Service Image */}
-                <div className="relative h-40 md:h-48 w-full mb-4">
+                <div className="relative h-56 sm:h-[260px] w-full mb-4">
                   <Image
                     src={service.firstImage} // Image path should match service id
                     alt={service.title}
@@ -50,13 +55,14 @@ export default function DocumentTypes() {
                   </p>
 
                   {/* Learn More Link */}
-                  <Link
-                    href={`/documents/${service.id}`}
+                  <span
                     className="text-[#D4AF37] font-semibold hover:text-[#b89730] transition"
                   >
                     Learn More
-                  </Link>
+                  </span>
                 </div>
+                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
@@ -65,3 +71,5 @@ export default function DocumentTypes() {
     </motion.section>
   );
 }
+
+
