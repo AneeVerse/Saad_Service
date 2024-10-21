@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -19,9 +20,9 @@ export default function Footer() {
             <p className="text-gray-400 leading-relaxed text-sm">
               Saad Service is your trusted partner for document attestation, Apostille services, and embassy certifications. We serve clients across 200+ countries with unmatched professionalism and efficiency.
             </p>
-            <p className="mt-4 text-gray-400 text-sm">
+            {/* <p className="mt-4 text-gray-400 text-sm">
               Providing fast, reliable, and globally recognized services for your legal documentation needs.
-            </p>
+            </p> */}
           </div>
 
           {/* Quick Links Section */}
@@ -120,10 +121,14 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section */}
-        <div className="border-t border-gray-700 mt-8 pt-4 text-center">
+        <div className="border-t border-gray-700 mt-8 flex flex-col sm:flex-row items-center gap-2 justify-between pt-4 text-center">
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Saad Service. All rights reserved.
           </p>
+          <Link target="_blank" href="https://aneeverse.com/en/" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
+          <span>Managed & Designed By Aneeverse</span> 
+          <Image src="/images/aneeverse-logo.png" alt='Aneeverse logo' width={20} height={20} />
+        </Link>
         </div>
       </div>
     </footer>
