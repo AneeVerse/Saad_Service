@@ -13,7 +13,7 @@ export default function Expertise() {
   // Calculate how many cards to show based on screen width
   const updateCardsToShow = () => {
     const screenWidth = window.innerWidth;
-    if (screenWidth >= 1800) setCardsToShow(5);
+    if (screenWidth >= 2000) setCardsToShow(4);
     else if (screenWidth >= 1200) setCardsToShow(4);
     else if (screenWidth >= 992) setCardsToShow(3);
     else if (screenWidth >= 668) setCardsToShow(2);

@@ -234,7 +234,7 @@ export default function ContactUs() {
           </motion.div>
 
           {/* Social Media Links */}
-          <motion.div
+          {/* <motion.div
             className="mt-10 sm:mt-16 text-center"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -261,7 +261,7 @@ export default function ContactUs() {
                 <FaInstagram />
               </a>
             </div>
-          </motion.div>
+          </motion.div> */}
         </div>
       </div>
     </div>
