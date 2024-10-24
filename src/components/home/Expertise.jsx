@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa6";
 import Typography from "../common/Typography";
 import servicesData from "@/data/servicesData";
+import Link from "next/link";
 
 export default function Expertise() {
   const [current, setCurrent] = useState(0);
@@ -74,9 +75,10 @@ export default function Expertise() {
             }}
           >
             {servicesData.map((item, index) => (
-              <div
+              <Link
                 key={index}
-                className="bg-white border rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
+                href={`/services/${item.id}`}
+                className="bg-white block border cursor-pointer rounded-lg my-3 mx-[10px] w-full shadow overflow-hidden hover:shadow-md transition-shadow duration-300"
                 style={{
                   flex: `0 0 calc((100% - ${cardsToShow * 20}px) / ${cardsToShow})`, // Adjust the card width based on the number of visible cards and gap
                 }}
@@ -96,7 +98,7 @@ export default function Expertise() {
                     {item.description}
                   </Typography>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
           <FaAngleLeft

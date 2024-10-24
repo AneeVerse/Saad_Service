@@ -41,7 +41,7 @@ export default function Hero() {
 
   return (
     <motion.section
-      className="relative h-screen overflow-hidden"
+      className="relative h-[calc(100vh-90px)] overflow-hidden"
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}

@@ -89,8 +89,8 @@ export default function Navbar() {
                 </Link>
                 {/* Mega Menu for Services or Documents */}
                 {link.dropdown && (
-                  <div className="absolute left-0 hidden group-hover:flex flex-col w-full  bg-white shadow-lg  py-6  z-50">
-                    <div className="max-w-7xl mx-auto flex flex-row flex-wrap gap-6 px-8">
+                  <div className="absolute left-0 hidden group-hover:flex flex-col w-full     pt-8  z-50">
+                    <div className="max-w-7xl mx-auto flex flex-row flex-wrap bg-white gap-6 shadow-lg rounded-xl py-6 px-8">
                       {link.subLinks.map((subLink, subIndex) => (
                         <Link
                           key={subIndex}

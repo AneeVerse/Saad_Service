@@ -67,13 +67,13 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/notary" className="hover:text-[#D4AF37] transition duration-300">
-                  Notary Services
+                <Link href="/services/certified-translation" className="hover:text-[#D4AF37] transition duration-300">
+                Certified Translations
                 </Link>
               </li>
               <li>
-                <Link href="/services/translation" className="hover:text-[#D4AF37] transition duration-300">
-                  Translation Services
+                <Link href="/services/interpretation" className="hover:text-[#D4AF37] transition duration-300">
+                Language Interpretation
                 </Link>
               </li>
             </ul>
