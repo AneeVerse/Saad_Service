@@ -227,7 +227,7 @@ export default function ContactUs() {
           >
             <iframe
               className="w-full h-60 sm:h-64 md:h-96 rounded-3xl shadow-2xl"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9824457414126!2d-74.00601508459471!3d40.71277597932826!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a316ec3f19b%3A0xf96cb0de5a071abc!2s123%20Business%20St%2C%20New%20York%2C%20NY%2010001!5e0!3m2!1sen!2sus!4v1618826754455!5m2!1sen!2sus"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.9922681170406!2d72.81652669946013!3d18.91603227578114!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7d193858dd257%3A0xda0685e6ec194336!2sAttestation%20Services!5e1!3m2!1sen!2sin!4v1729760891169!5m2!1sen!2sin"
               allowFullScreen=""
               loading="lazy"
             ></iframe>
