@@ -13,7 +13,7 @@ export default function AboutTeam() {
     {
       name: "Abdullah",
       role: "Team Member",
-      image: "/images/about/profile.webp",
+      image: "/images/about/abdullah-team.jpg",
     },
   ];
 
