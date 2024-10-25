@@ -52,7 +52,7 @@ export default function FAQ() {
           >
             <div className="flex justify-between items-center">
               <h3 className="text-xl flex gap-3 items-center font-semibold">
-              <FaQuestionCircle className="text-[#D4AF37] text-xl" />
+              <FaQuestionCircle className="text-[#D4AF37] min-w-fit text-xl" />
                 {faq.question}
                 </h3>
               {openIndex === index ? (
