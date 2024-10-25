@@ -28,43 +28,63 @@ export async function POST(request) {
       <style>
         body {
           font-family: Arial, sans-serif;
-          background-color: #f4f4f4;
+          background-color: #f7f7f7;
           margin: 0;
           padding: 0;
         }
         .container {
           max-width: 600px;
-          margin: 20px auto;
-          background-color: #fff;
-          padding: 20px;
+          margin: 40px auto;
+          background-color: #ffffff;
+          padding: 30px;
           border-radius: 8px;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+          border: 1px solid #ddd;
         }
         h2 {
           color: #333;
-          font-size: 24px;
-          margin-bottom: 20px;
+          font-size: 22px;
+          margin: 0 0 20px;
+          text-align: center;
+          padding-bottom: 10px;
+          border-bottom: 1px solid #ddd;
+          font-weight: 700;
         }
         p {
           font-size: 16px;
           line-height: 1.6;
-          color: #666;
+          color: #555;
+          margin: 0;
+          padding: 10px 0;
         }
         .info {
-          margin-bottom: 15px;
+          font-size: 16px;
+          margin: 10px 0;
+          padding: 12px;
+          background-color: #f9f9f9;
+          border-left: 4px solid #4caf50;
+          border-radius: 5px;
         }
-        .info span {
+        .info span.label {
           font-weight: bold;
           color: #333;
         }
+        .footer {
+          text-align: center;
+          font-size: 14px;
+          color: #888;
+          margin-top: 20px;
+          padding-top: 15px;
+          border-top: 1px solid #ddd;
+        }
         @media only screen and (max-width: 600px) {
           .container {
-            padding: 10px;
+            padding: 20px;
           }
           h2 {
             font-size: 20px;
           }
-          p {
+          p, .info {
             font-size: 14px;
           }
         }
@@ -73,37 +93,27 @@ export async function POST(request) {
     <body>
       <div class="container">
         <h2>New Contact Form Submission</h2>
+        <p>Dear Admin,</p>
         <p>You have received a new contact form submission with the following details:</p>
         
         <div class="info">
-          <p><span>Name:</span> ${data.name}</p>
+          <span class="label">Name:</span> ${data.name}
         </div>
         
         <div class="info">
-          <p><span>Phone:</span> ${data.phone}</p>
+          <span class="label">Phone:</span> ${data.phone}
         </div>
-        
         
         <div class="info">
-          <p><span>Email:</span> ${data.email}</p>
+          <span class="label">Email:</span> ${data.email}
         </div>
-        
         
         <div class="info">
-          <p><span>Message:</span> ${data.message && data.message }</p>
+          <span class="label">Message:</span> ${data.message}
         </div>
-  
-        <p>Kind regards,<br>Your Website Team</p>
       </div>
     </body>
     </html>
-    `,
-    text: `
-      You have a new contact form submission:
-      Name: ${data.name}
-      Phone: ${data.phone}
-      Email: ${data.email}
-      Message: ${data.message}
     `,
   };
 
