@@ -115,6 +115,13 @@ export async function POST(request) {
     </body>
     </html>
     `,
+    text: `
+    You have a new contact form submission:
+    Name: ${data.name}
+    Phone: ${data.phone}
+    Email: ${data.email}
+    Message: ${data.message}
+  `,
   };
 
   // Send the email
