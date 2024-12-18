@@ -205,13 +205,13 @@ export default function ContactUs() {
                 </p>
                 <ul className="space-y-6">
                   <li className="flex items-center text-lg">
-                    <FaPhoneAlt className="mr-3" /> +1 234 567 890
+                    <FaPhoneAlt className="mr-3" /> +919882808033 / +919920808033
                   </li>
                   <li className="flex items-center text-lg">
-                    <FaEnvelope className="mr-3" /> support@saadservice.com
+                    <FaEnvelope className="mr-3" /> Info@saadservices.com
                   </li>
                   <li className="flex items-center text-lg">
-                    <FaMapMarkerAlt className="mr-3" /> 123 Business Street, New York, NY 10001
+                    <FaMapMarkerAlt className="mr-3 min-w-fit" /> Saad services 15, Maker Arcade, Maker tower Below Saudi Arabian Consulate, Cuffe Parade, Colaba, Mumbai, Maharashtra 400005
                   </li>
                 </ul>
               </div>
