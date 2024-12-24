@@ -14,7 +14,7 @@ export async function POST(request) {
 
   // Email options
   const mailOptions = {   
-    from: `"FAAD SERVICE" <${data.email}>`, // Sender's name and email
+    from: `"SAAD SERVICE" <${data.email}>`, // Sender's name and email
     to: process.env.NEXT_PUBLIC_EMAIL_RECEIVER, // Receiver's email (your email)
     subject: 'New Contact Form Submission',
     html: `
