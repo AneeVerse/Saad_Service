@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FaInstagram } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 
 export default function Footer() {
@@ -90,7 +91,12 @@ export default function Footer() {
               <Link href="https://www.facebook.com/saadservices1995/" target="_blank">
                <FaFacebook className="text-2xl hover:text-[#D4AF37] transition duration-300"/>
               </Link>
+
+              <Link href="https://www.instagram.com/saad_services_/" target="_blank">
+               <FaInstagram className="text-2xl hover:text-[#D4AF37] transition duration-300"/>
+              </Link>
             </div>
+            
           </div>
         </div>
 
@@ -99,7 +105,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Saad Service. All rights reserved.
           </p>
-          <Link target="_blank" href="https://aneeverse.com/en/" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
+          <Link target="_blank" href="https://aneeverse.com" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
           <span>Managed & Designed By Aneeverse</span> 
           <Image src="/images/aneeverse-logo.png" alt='Aneeverse logo' width={20} height={20} />
         </Link>
