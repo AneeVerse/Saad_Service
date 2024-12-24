@@ -208,7 +208,7 @@ export default function ContactUs() {
                     <FaPhoneAlt className="mr-3" /> +919882808033 / +919920808033
                   </li>
                   <li className="flex items-center text-lg">
-                    <FaEnvelope className="mr-3" /> Info@saadservices.com
+                    <FaEnvelope className="mr-3" /> saadservices@gmail.com / info@saadservice.com
                   </li>
                   <li className="flex items-center text-lg">
                     <FaMapMarkerAlt className="mr-3 min-w-fit" /> Saad services 15, Maker Arcade, Maker tower Below Saudi Arabian Consulate, Cuffe Parade, Colaba, Mumbai, Maharashtra 400005
