@@ -7,7 +7,7 @@ export default function AboutTeam() {
   const teamMembers = [
     {
       name: "Saad Ahmed Momin",
-      role: "Founder & Owner & Director",
+      role: "Director",
       image: "/images/about/co-founder.png",
     },
     {
