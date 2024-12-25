@@ -143,8 +143,8 @@ export default function Contact() {
                 Feel free to contact us for any inquiries or assistance. Our team
                 is ready to help.
               </p>
-              <p className="text-lg">📧 support@saadservice.com</p>
-              <p className="text-lg">📞 +1 234 567 890</p>
+              <p className="text-lg">📧 saadservices@gmail.com / info@saadservice.com</p>
+              <p className="text-lg">📞 +91 9882808033 / +91 9920808033</p>
             </div>
           </motion.div>
 

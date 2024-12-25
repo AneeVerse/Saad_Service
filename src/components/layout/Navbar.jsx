@@ -72,7 +72,7 @@ export default function Navbar() {
                 priority={true}
               />
             </div>
-            <span className="text-lg sm:text-xl md:text-2xl">{"Saad Service".toUpperCase()}</span>
+            <span className="text-lg sm:text-xl md:text-2xl">{"Saad Services®" .toUpperCase()}</span>
           </Link>
 
           {/* Menu for larger screens */}

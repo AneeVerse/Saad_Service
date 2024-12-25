@@ -17,7 +17,7 @@ export default function Footer() {
                 alt="Saad Service Logo"
                 className="w-10 h-10 mr-3"
               />
-              <h3 className="text-2xl font-bold text-[#D4AF37]">SAAD SERVICE</h3>
+              <h3 className="text-2xl font-bold text-[#D4AF37]">SAAD SERVICES®</h3>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
               Saad Service is your trusted partner for document attestation, Apostille services, and embassy certifications. We serve clients across 200+ countries with unmatched professionalism and efficiency.
@@ -103,7 +103,7 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-gray-700 mt-8 flex flex-col sm:flex-row items-center gap-2 justify-between pt-4 text-center">
           <p className="text-sm text-gray-400">
-            &copy; {new Date().getFullYear()} Saad Service. All rights reserved.
+            &copy; {new Date().getFullYear()} Saad Services®. All rights reserved.
           </p>
           <Link target="_blank" href="https://aneeverse.com" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
           <span>Managed & Designed By Aneeverse</span> 
