@@ -211,7 +211,7 @@ export default function VisaAssistance() {
                     <FaPhoneAlt className="mr-3" /> +919882808033 / +919920808033
                   </li>
                   <li className="flex items-center text-lg">
-                    <FaEnvelope className="mr-3" /> saadservices@gmail.com / info@saadservice.com
+                    <FaEnvelope className="mr-3" /> saadservices@gmail.com / info@saadservices.com
                   </li>
                   <li className="flex items-center text-lg">
                     <FaMapMarkerAlt className="mr-3" /> Saad services 15, Maker Arcade, Maker tower Below Saudi Arabian Consulate, Cuffe Parade, Colaba, Mumbai, Maharashtra 400005
