@@ -14,13 +14,13 @@ export default function Footer() {
             <div className="flex items-center justify-center md:justify-start mb-4">
               <img
                 src="/images/logo-saad-tr.png"
-                alt="Saad Service Logo"
+                alt="Saad Services Logo"
                 className="w-10 h-10 mr-3"
               />
               <h3 className="text-2xl font-bold text-[#D4AF37]">SAAD SERVICES®</h3>
             </div>
             <p className="text-gray-400 leading-relaxed text-sm">
-              Saad Service is your trusted partner for document attestation, Apostille services, and embassy certifications. We serve clients across 200+ countries with unmatched professionalism and efficiency.
+              Saad Services is your trusted partner for document attestation, Apostille services, and embassy certifications. We serve clients across 200+ countries with unmatched professionalism and efficiency.
             </p>
             {/* <p className="mt-4 text-gray-400 text-sm">
               Providing fast, reliable, and globally recognized services for your legal documentation needs.

@@ -131,13 +131,13 @@ export default function Navbar() {
             <div className="relative w-8 h-8">
               <Image
                 src="/images/logo-saad.png"
-                alt="Saad Service Logo"
+                alt="Saad Services Logo"
                 layout="fill"
                 objectFit="contain"
                 priority={true}
               />
             </div>
-            <span className="text-[18px]">{"Saad Service".toUpperCase()}</span>
+            <span className="text-[18px]">{"Saad Services®".toUpperCase()}</span>
           </div>
           {/* Close Button */}
           <button className="text-2xl text-gray-700" onClick={toggleSidebar}>
