@@ -58,7 +58,7 @@ const FloatingActionButton = () => {
           </motion.a>
 
           <motion.a
-            href="tel:+9892808033"
+            href="tel:+919892808033"
             className="w-14 h-14 bg-white text-[#b89730] rounded-full flex items-center justify-center shadow-lg border border-[#b89730]"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -93,7 +93,7 @@ const FloatingActionButton = () => {
                 whileHover={{ scale: 1.05 }}
               >
                 <a
-                  href="https://wa.me/+9892808033"
+                  href="https://wa.me/+919892808033"
                   className="flex items-center text-[#b89730] cursor-pointer"
                   target="_blank"
                   rel="noopener noreferrer"
