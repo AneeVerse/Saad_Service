@@ -144,7 +144,7 @@ export default function Contact() {
                 is ready to help.
               </p>
               <p className="text-lg">📧 saadservices@gmail.com / info@saadservices.com</p>
-              <p className="text-lg">📞 +91 9882808033 / +91 9920808033</p>
+              <p className="text-lg">📞 +919892808033 / +91 9920808033</p>
             </div>
           </motion.div>
 

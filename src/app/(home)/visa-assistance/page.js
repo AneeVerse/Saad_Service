@@ -208,7 +208,7 @@ export default function VisaAssistance() {
                 </p>
                 <ul className="space-y-6">
                   <li className="flex items-center text-lg">
-                    <FaPhoneAlt className="mr-3" /> +919882808033 / +919920808033
+                    <FaPhoneAlt className="mr-3" /> +919892808033 / +919920808033
                   </li>
                   <li className="flex items-center text-lg">
                     <FaEnvelope className="mr-3" /> saadservices@gmail.com / info@saadservices.com
