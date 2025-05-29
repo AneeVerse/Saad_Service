@@ -105,7 +105,7 @@ export default function Footer() {
           <p className="text-sm text-gray-400">
             &copy; {new Date().getFullYear()} Saad Services®. All rights reserved.
           </p>
-          <Link target="_blank" href="https://aneeverse.com" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
+          <Link target="_blank" href="https://www.aneeverse.com/" className="text-gray-400 text-sm hover:text-[#D4AF37] flex items-center gap-2"> 
           <span>Managed & Designed By Aneeverse</span> 
           <Image src="/images/aneeverse-logo.png" alt='Aneeverse logo' width={20} height={20} />
         </Link>
